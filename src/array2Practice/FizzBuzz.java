@@ -10,6 +10,23 @@ into an array instead of just printing, and we vary the start/end instead of jus
  */
 public class FizzBuzz {
     public static void main(String[] args) {
+        String[] strArr = fizzBuzz(1, 6);
+        for (String s : strArr) System.out.println(s);
+    }
 
+    public static String[] fizzBuzz(int start, int end) {
+        String[] strings = new String[end - start];
+        for (int i = start, j = 0; i < end; i++, j++) {
+            if (i % 15 == 0) {
+                strings[j] = "FizzBuzz";
+            } else if (i % 3 == 0) {
+                strings[j] = "Fizz";
+            } else if (i % 5 == 0) {
+                strings[j] = "Buzz";
+            } else {
+                strings[j] = String.valueOf(i);
+            }
+        }
+        return strings;
     }
 }
