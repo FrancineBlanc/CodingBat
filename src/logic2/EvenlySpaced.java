@@ -14,8 +14,11 @@ public class EvenlySpaced {
     }
 
     public static boolean evenlySpaced(int a, int b, int c) {
+        int min = Math.min(Math.min(a, b), c);
+        int max = Math.max(Math.max(a, b), c);
+        int mid = Math.max(Math.min(a, b), c);
+        int mid2 = Math.min(Math.max(a, b), c);
 
-
-        return true;
+        return Math.abs(min - mid) == Math.abs(max - mid) || Math.abs(min - mid2) == Math.abs(max - mid2);
     }
 }
